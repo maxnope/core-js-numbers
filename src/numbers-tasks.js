@@ -18,8 +18,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+  return width * height;
 }
 
 /**
@@ -68,8 +68,8 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 }
 
 /**
@@ -122,8 +122,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
 
 /**
@@ -154,8 +154,8 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
 /**
