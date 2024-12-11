@@ -49,8 +49,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  return value1 / 2 + value2 / 2;
 }
 
 /**
@@ -105,8 +105,8 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  return Math.abs(Math.atan2(y1, x1) - Math.atan2(y2, x2));
 }
 
 /**
@@ -175,8 +175,8 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  return Math.round(num / 10 ** pow) * 10 ** pow;
 }
 
 /**
@@ -196,8 +196,15 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let res = true;
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      res = false;
+      break;
+    }
+  }
+  return res;
 }
 
 /**
@@ -215,8 +222,8 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  return Number(value) ? Number(value) : def;
 }
 
 /**
@@ -247,8 +254,17 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  if (index <= 1) return index;
+  let a = 0;
+  let b = 1;
+  let temp;
+  for (let i = 2; i <= index; i += 1) {
+    temp = b;
+    b = a + b;
+    a = temp;
+  }
+  return b;
 }
 
 /**
@@ -300,8 +316,12 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let res = false;
+  for (let i = num; i >= 1; i /= 2) {
+    if (i === 1) res = true;
+  }
+  return res;
 }
 
 /**
@@ -575,8 +595,8 @@ function getMaxNumber(firstNumber, secondNumber) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 /**
@@ -606,8 +626,12 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  let n = 0;
+  for (let i = 1; i <= Math.abs(number); i += 1) {
+    if (i % 2 !== 0) n += 1;
+  }
+  return n;
 }
 
 module.exports = {
